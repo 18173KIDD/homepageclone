@@ -1,15 +1,36 @@
-// カスタムJavaScriptファイル - サイトの機能を実装
+// ヘッダーメニュー機能
+function setupHeaderMenu() {
+    const hamburgerButton = document.querySelector('.p-header__hamburger_menu_button');
+    const overlay = document.querySelector('.l-header__overlay');
+    const body = document.body;
 
+    if (hamburgerButton) {
+        hamburgerButton.addEventListener('click', function() {
+            body.classList.toggle('is-header_menu_open');
+        });
+    }
+
+    if (overlay) {
+        overlay.addEventListener('click', function() {
+            body.classList.remove('is-header_menu_open');
+        });
+    }
+}
+
+// カスタムJavaScriptファイル - サイトの機能を実装
 document.addEventListener('DOMContentLoaded', function() {
+    // ヘッダーメニュー機能の初期化
+    setupHeaderMenu();
+
     // フォームバリデーション
     setupFormValidation();
-    
+
     // アコーディオン機能
     setupAccordion();
-    
+
     // スライダー機能
     setupSlider();
-    
+
     // スムーススクロール
     setupSmoothScroll();
 });
@@ -18,13 +39,13 @@ document.addEventListener('DOMContentLoaded', function() {
 function setupFormValidation() {
     const form = document.querySelector('.price-check-form');
     if (!form) return;
-    
+
     form.addEventListener('submit', function(e) {
         e.preventDefault();
-        
+
         let isValid = true;
         const requiredFields = form.querySelectorAll('[required]');
-        
+
         // 必須フィールドのチェック
         requiredFields.forEach(field => {
             if (!field.value.trim()) {
@@ -34,7 +55,7 @@ function setupFormValidation() {
                 removeError(field);
             }
         });
-        
+
         // 電話番号のバリデーション
         const phoneField = form.querySelector('#phone');
         if (phoneField && phoneField.value.trim()) {
@@ -44,7 +65,7 @@ function setupFormValidation() {
                 showError(phoneField, '正しい電話番号を入力してください');
             }
         }
-        
+
         // メールアドレスのバリデーション（任意項目）
         const emailField = form.querySelector('#email');
         if (emailField && emailField.value.trim()) {
@@ -54,7 +75,7 @@ function setupFormValidation() {
                 showError(emailField, '正しいメールアドレスを入力してください');
             }
         }
-        
+
         // フォーム送信
         if (isValid) {
             // 実際の送信処理はここに実装
@@ -63,12 +84,12 @@ function setupFormValidation() {
             form.reset();
         }
     });
-    
+
     // エラーメッセージの表示
     function showError(field, message) {
         // 既存のエラーメッセージを削除
         removeError(field);
-        
+
         // エラーメッセージの作成
         const errorDiv = document.createElement('div');
         errorDiv.className = 'error-message';
@@ -76,14 +97,14 @@ function setupFormValidation() {
         errorDiv.style.color = 'red';
         errorDiv.style.fontSize = '12px';
         errorDiv.style.marginTop = '5px';
-        
+
         // フィールドの後にエラーメッセージを挿入
         field.parentNode.appendChild(errorDiv);
-        
+
         // フィールドにエラースタイルを適用
         field.style.borderColor = 'red';
     }
-    
+
     // エラーメッセージの削除
     function removeError(field) {
         const errorMessage = field.parentNode.querySelector('.error-message');
@@ -98,15 +119,15 @@ function setupFormValidation() {
 function setupAccordion() {
     const faqItems = document.querySelectorAll('.faq-item');
     if (faqItems.length === 0) return;
-    
+
     faqItems.forEach(item => {
         const question = item.querySelector('.faq-question');
         const answer = item.querySelector('.faq-answer');
-        
+
         question.addEventListener('click', function() {
             // アクティブ状態の切り替え
             const isActive = item.classList.contains('active');
-            
+
             // すべてのアイテムを閉じる
             faqItems.forEach(faqItem => {
                 faqItem.classList.remove('active');
@@ -115,7 +136,7 @@ function setupAccordion() {
                     faqAnswer.style.display = 'none';
                 }
             });
-            
+
             // クリックされたアイテムを開く（閉じていた場合）
             if (!isActive) {
                 item.classList.add('active');
@@ -129,7 +150,7 @@ function setupAccordion() {
 function setupSlider() {
     // カラーセレクター用のスライダー
     setupColorSelector();
-    
+
     // コラムスライダー
     setupColumnSlider();
 }
@@ -138,7 +159,7 @@ function setupSlider() {
 function setupColorSelector() {
     const colorSelector = document.querySelector('.color-selector');
     if (!colorSelector) return;
-    
+
     // カラーオプションの作成
     const colors = [
         { name: 'blue', code: '#4FC3F7' },
@@ -147,7 +168,7 @@ function setupColorSelector() {
         { name: 'yellow', code: '#FFEE58' },
         { name: 'purple', code: '#AB47BC' }
     ];
-    
+
     // カラーボタンの作成
     colors.forEach(color => {
         const button = document.createElement('button');
@@ -159,7 +180,7 @@ function setupColorSelector() {
         button.style.margin = '0 5px';
         button.style.border = 'none';
         button.style.cursor = 'pointer';
-        
+
         // クリックイベント
         button.addEventListener('click', function() {
             // 家の色を変更する処理
@@ -168,7 +189,7 @@ function setupColorSelector() {
                 house.style.backgroundColor = color.code;
             }
         });
-        
+
         colorSelector.appendChild(button);
     });
 }
@@ -177,17 +198,17 @@ function setupColorSelector() {
 function setupColumnSlider() {
     const sliders = document.querySelectorAll('.column-list');
     if (sliders.length === 0) return;
-    
+
     sliders.forEach(slider => {
         const prevBtn = slider.parentNode.querySelector('button[aria-label="前へ"]');
         const nextBtn = slider.parentNode.querySelector('button[aria-label="次へ"]');
-        
+
         if (prevBtn && nextBtn) {
             let currentPosition = 0;
             const itemWidth = 300; // 各アイテムの幅
             const visibleItems = Math.floor(slider.offsetWidth / itemWidth);
             const maxPosition = Math.max(0, slider.children.length - visibleItems);
-            
+
             // 前へボタン
             prevBtn.addEventListener('click', function() {
                 if (currentPosition > 0) {
@@ -195,7 +216,7 @@ function setupColumnSlider() {
                     updateSliderPosition();
                 }
             });
-            
+
             // 次へボタン
             nextBtn.addEventListener('click', function() {
                 if (currentPosition < maxPosition) {
@@ -203,7 +224,7 @@ function setupColumnSlider() {
                     updateSliderPosition();
                 }
             });
-            
+
             // スライダー位置の更新
             function updateSliderPosition() {
                 slider.style.transform = `translateX(-${currentPosition * itemWidth}px)`;
@@ -215,14 +236,14 @@ function setupColumnSlider() {
 // スムーススクロール
 function setupSmoothScroll() {
     const links = document.querySelectorAll('a[href^="#"]');
-    
+
     links.forEach(link => {
         link.addEventListener('click', function(e) {
             e.preventDefault();
-            
+
             const targetId = this.getAttribute('href');
             if (targetId === '#') return;
-            
+
             const targetElement = document.querySelector(targetId);
             if (targetElement) {
                 window.scrollTo({

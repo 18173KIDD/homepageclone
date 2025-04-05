@@ -28,7 +28,7 @@ document.addEventListener('DOMContentLoaded', function() {
     // アコーディオン機能
     setupAccordion();
 
-    // スライダー機能
+    // スライダー機能 (カラーセレクター含む)
     setupSlider();
 
     // スムーススクロール
@@ -157,40 +157,25 @@ function setupSlider() {
 
 // カラーセレクター
 function setupColorSelector() {
-    const colorSelector = document.querySelector('.color-selector');
-    if (!colorSelector) return;
+    const colorPreview = document.querySelector('.mv-house__color-preview');
+    const colorButtons = document.querySelectorAll('.mv-house__cycling-button');
 
-    // カラーオプションの作成
-    const colors = [
-        { name: 'blue', code: '#4FC3F7' },
-        { name: 'red', code: '#EF5350' },
-        { name: 'green', code: '#66BB6A' },
-        { name: 'yellow', code: '#FFEE58' },
-        { name: 'purple', code: '#AB47BC' }
-    ];
+    if (!colorPreview || colorButtons.length === 0) return;
 
-    // カラーボタンの作成
-    colors.forEach(color => {
-        const button = document.createElement('button');
-        button.className = 'color-option';
-        button.style.backgroundColor = color.code;
-        button.style.width = '20px';
-        button.style.height = '20px';
-        button.style.borderRadius = '50%';
-        button.style.margin = '0 5px';
-        button.style.border = 'none';
-        button.style.cursor = 'pointer';
-
-        // クリックイベント
+    colorButtons.forEach(button => {
         button.addEventListener('click', function() {
-            // 家の色を変更する処理
-            const house = document.querySelector('.house-image');
-            if (house) {
-                house.style.backgroundColor = color.code;
-            }
-        });
+            const selectedColor = this.dataset.color;
 
-        colorSelector.appendChild(button);
+            // プレビューのクラスを更新
+            // 既存の色クラスをすべて削除
+            colorPreview.classList.remove('preview--light-blue', 'preview--blue', 'preview--green', 'preview--yellow', 'preview--orange');
+            // 新しい色クラスを追加
+            colorPreview.classList.add(`preview--${selectedColor}`);
+
+            // アクティブボタンのスタイルを更新
+            colorButtons.forEach(btn => btn.classList.remove('button-active'));
+            this.classList.add('button-active');
+        });
     });
 }
 

@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>外壁塗装の窓口|日本最大級の一括見積もりサイトが優良外壁塗装業者を紹介</title>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100&display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&display=swap"> <!-- weight修正 -->
     <link rel="stylesheet" href="css/main.27429ad9ab1a4f885b52.css">
     <link rel="stylesheet" href="css/top_page.67cedc98f430db3073ea.css">
     <link rel="stylesheet" href="css/static_page.a408721e399eb096209b.css">
@@ -13,36 +13,147 @@
 </head>
 <body>
     <!-- ヘッダー部分 -->
-    <header class="header">
-        <div class="header-container">
-            <div class="header-logo">
-                <a href="/">
-                    <img src="images/logo.svg" alt="外壁塗装の窓口">
-                </a>
-            </div>
-            <div class="header-contact">
-                <div class="header-tel">
-                    <img src="images/tel-pc.svg" alt="0120-945-990" class="pc-only">
-                    <img src="images/phone-sp.svg" alt="電話" class="sp-only">
-                    <span class="tel-number">0120-945-990</span>
-                    <span class="tel-time">24時間受付中（年中無休）</span>
-                </div>
-                <div class="header-inquiry">
-                    <a href="/contact" class="inquiry-button">お問い合わせ</a>
+    <header class="l-header">
+        <div class="l-header__wrapper">
+            <div class="l-header__overlay"></div> <!-- モバイルメニュー用オーバーレイ -->
+            <div class="p-header">
+                <div class="p-header__container">
+                    <div class="p-header__logo">
+                        <a href="/" class="p-header__logo_link">
+                            <div class="p-header__logo_link_wrapper">
+                                <img src="images/logo.svg" alt="外壁塗装の窓口" class="p-header__logo_image">
+                            </div>
+                        </a>
+                    </div>
+                    <!-- 上部ナビゲーション (PC用) -->
+                    <div class="p-header__nav_upper">
+                        <div class="p-header__tel">
+                            <div class="p-header__tel_wrapper">
+                                <img src="images/tel-pc.svg" alt="0120-945-990" class="pc-only">
+                                <!-- SP用の電話アイコンは別途CSSで制御 -->
+                            </div>
+                        </div>
+                        <div class="p-header__contact_button p-header__button">
+                            <a href="/contact" class="p-header__button_link">
+                                <div class="p-header__button_wrapper">
+                                    <span class="p-header__button_link_text">お問い合わせ</span>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                    <!-- メインナビゲーション (PC用) -->
+                    <nav class="p-header__nav">
+                        <div class="p-header__nav_item_list_disappearable_container">
+                            <ul class="p-header__nav_item_list">
+                                <li class="p-header__nav_item">
+                                    <a href="/clients/prefectures" class="p-header__nav_item_link">
+                                        <div class="p-header__nav_item_wrapper">
+                                            <span class="p-header__nav_item_text">施工店一覧</span>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li class="p-header__nav_item">
+                                    <a href="/articles" class="p-header__nav_item_link">
+                                        <div class="p-header__nav_item_wrapper">
+                                            <span class="p-header__nav_item_text">外壁塗装コラム</span>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li class="p-header__nav_item">
+                                    <a href="/articles/1319" class="p-header__nav_item_link"> <!-- 本家サイトのリンクに修正 -->
+                                        <div class="p-header__nav_item_wrapper">
+                                            <span class="p-header__nav_item_text">外壁塗装助成金</span>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li class="p-header__nav_item">
+                                    <a href="/articles/1347" class="p-header__nav_item_link"> <!-- 本家サイトのリンクに修正 -->
+                                        <div class="p-header__nav_item_wrapper">
+                                            <span class="p-header__nav_item_text">外壁塗装相場</span>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li class="p-header__nav_item">
+                                    <a href="/ads" class="p-header__nav_item_link">
+                                        <div class="p-header__nav_item_wrapper">
+                                            <span class="p-header__nav_item_text">加盟店募集</span>
+                                        </div>
+                                    </a>
+                                </li>
+                                <!-- 本家サイトには「今すぐ相談する」ボタンはここにはない -->
+                            </ul>
+                        </div>
+                    </nav>
+                    <!-- ハンバーガーメニューボタン (モバイル用) -->
+                    <div class="p-header__hamburger_menu_container">
+                        <div class="p-header__hamburger_menu_button">
+                            <span></span> <!-- ハンバーガーアイコン用 -->
+                        </div>
+                    </div>
+                    <!-- ハンバーガーメニュー本体 (モバイル用、初期非表示) -->
+                    <div class="p-header__hamburger_menu">
+                        <div class="p-header__hamburger_menu_wrapper">
+                            <!-- モバイル用ナビゲーションリスト -->
+                            <ul class="p-header__nav_item_list">
+                                <li class="p-header__nav_item">
+                                    <a href="/clients/prefectures" class="p-header__nav_item_link">
+                                        <div class="p-header__nav_item_wrapper">
+                                            <span class="p-header__nav_item_text">施工店一覧</span>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li class="p-header__nav_item">
+                                    <a href="/articles" class="p-header__nav_item_link">
+                                        <div class="p-header__nav_item_wrapper">
+                                            <span class="p-header__nav_item_text">外壁塗装コラム</span>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li class="p-header__nav_item">
+                                    <a href="/articles/1319" class="p-header__nav_item_link">
+                                        <div class="p-header__nav_item_wrapper">
+                                            <span class="p-header__nav_item_text">外壁塗装助成金</span>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li class="p-header__nav_item">
+                                    <a href="/articles/1347" class="p-header__nav_item_link">
+                                        <div class="p-header__nav_item_wrapper">
+                                            <span class="p-header__nav_item_text">外壁塗装相場</span>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li class="p-header__nav_item">
+                                    <a href="/ads" class="p-header__nav_item_link">
+                                        <div class="p-header__nav_item_wrapper">
+                                            <span class="p-header__nav_item_text">加盟店募集</span>
+                                        </div>
+                                    </a>
+                                </li>
+                                <!-- モバイル用お問い合わせボタン -->
+                                <li class="p-header__nav_item p-header__button_in_hamburger_menu">
+                                     <div class="p-header__contact_button p-header__button">
+                                        <a href="/contact" class="p-header__button_link">
+                                            <div class="p-header__button_wrapper">
+                                                <span class="p-header__button_link_text">お問い合わせ</span>
+                                            </div>
+                                        </a>
+                                    </div>
+                                </li>
+                                <!-- モバイル用電話ボタン -->
+                                <li class="p-header__nav_item p-header__button_in_hamburger_menu">
+                                    <a href="tel:0120-945-990" class="p-header-button-call">
+                                        <img src="images/phone-sp.svg" alt="電話">
+                                        <em>0120-945-990</em><br>
+                                        24時間受付中
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
-        <!-- メインナビゲーション -->
-        <nav class="main-nav">
-            <ul class="nav-list">
-                <li class="nav-item"><a href="/companies">施工店一覧</a></li>
-                <li class="nav-item"><a href="/columns">外壁塗装コラム</a></li>
-                <li class="nav-item"><a href="/subsidies">外壁塗装助成金</a></li>
-                <li class="nav-item"><a href="/prices">外壁塗装相場</a></li>
-                <li class="nav-item"><a href="/partner">加盟店募集</a></li>
-                <li class="nav-item"><a href="/contact" class="contact-button">今すぐ相談する</a></li>
-            </ul>
-        </nav>
     </header>
 
     <!-- メインビジュアル部分 -->

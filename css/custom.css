@@ -422,6 +422,279 @@ body.is-header_menu_open .l-header__overlay {
     }
 }
 
+/* メインビジュアル */
+.top-page__mv {
+    padding: 4.7rem 0 5rem;
+    background-color: #f7f4f0;
+    position: relative;
+    width: 100%;
+}
+
+.p-top-page__background-mv {
+    position: absolute;
+}
+
+.p-top-page__background-mv.top-left {
+    top: 0;
+    left: 0;
+    width: 40rem;
+}
+
+.p-top-page__background-mv.bottom-right {
+    bottom: 0;
+    right: 0;
+    width: 50rem;
+}
+
+.top-page__mv-content {
+    display: flex;
+    position: relative;
+    z-index: 1;
+    height: 100%;
+    align-items: center;
+    margin: 0 auto;
+    max-width: 1440px;
+}
+
+.mv-description {
+    flex: 4;
+    font-size: 15px;
+    letter-spacing: 0px;
+    line-height: 24px;
+    font-weight: bold;
+    text-align: center;
+}
+
+.mv-description .sub {
+    text-align: left;
+    display: flex;
+}
+
+.mv-description .sub .mv-description__icon {
+    width: 4.2rem;
+    margin-right: 1.2rem;
+}
+
+.mv-description .sub em {
+    margin: 0 3px;
+    font-size: 3.2rem;
+    color: #f16f21;
+    font-weight: 600;
+    letter-spacing: 0px;
+    font-family: "Poppins";
+    font-style: normal; /* emタグのデフォルトスタイル解除 */
+}
+
+.mv-description .large-title {
+    font-size: 7.4rem;
+    letter-spacing: 2px;
+    line-height: 8.8rem;
+    font-weight: 800;
+    text-align: left;
+    margin: 1.5rem 0 2rem -0.5rem;
+}
+
+.mv-description .large-title .special-break-line {
+    display: none;
+}
+
+.mv-description .description-ranking {
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+    --ranking-width: 154px;
+    --display-line: unset;
+}
+
+.mv-description .description-ranking::before,
+.mv-description .description-ranking::after {
+    content: "";
+    position: absolute;
+    border-right: 1px solid #e6e6e6;
+    height: 100%;
+    display: var(--display-line);
+}
+
+.mv-description .description-ranking::before {
+    left: calc(var(--ranking-width) + (100% - var(--ranking-width)*3)/4);
+}
+
+.mv-description .description-ranking::after {
+    right: calc(var(--ranking-width) + (100% - var(--ranking-width)*3)/4);
+}
+
+.mv-description .description-ranking .description-ranking__content {
+    flex: 0 0 auto;
+    font-size: 1.4rem;
+}
+
+.mv-description .description-ranking .description-ranking__content .ranking {
+    justify-content: center;
+    margin: 0;
+    margin-top: .7rem;
+    letter-spacing: 0px;
+    font-size: 4.1rem;
+    color: #dab86d;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    font-family: "Poppins", sans-serif;
+    --width-icon: 3rem;
+    --height-icon: 5rem;
+}
+
+.mv-description .description-ranking .description-ranking__content .ranking::before,
+.mv-description .description-ranking .description-ranking__content .ranking::after {
+    content: "";
+    display: inline-block;
+    width: var(--width-icon);
+    height: var(--height-icon);
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+.mv-description .description-ranking .description-ranking__content .ranking::before {
+    background-image: url(../images/flower-left-a1aef51ee91467dc03ba..svg);
+}
+
+.mv-description .description-ranking .description-ranking__content .ranking::after {
+    background-image: url(../images/flower-right-0ae25c7d0ebac2e2b134..svg);
+    background-position: right;
+}
+
+.mv-house__color-column {
+    flex: 4;
+}
+
+.mv-house__color-preview {
+    --bg-url: url(../images/house_light_blue-c33b778b115e032f186f..png);
+    background: var(--bg-url) no-repeat;
+    background-size: contain;
+    background-position: center;
+    text-align: center;
+    position: relative;
+    aspect-ratio: 29/22;
+}
+
+.mv-house__color-preview .mv-house__color-preview__content {
+    position: absolute;
+    left: 0;
+    bottom: 17%;
+    transform: translateY(50%);
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* 中央揃え */
+}
+
+.mv-house__color-preview .mv-house__color-preview__content p {
+    margin: .5rem 0 1em;
+    color: #333; /* 文字色調整 */
+    font-weight: bold;
+}
+
+.mv-house__color-preview__button-list {
+    display: flex;
+}
+
+.mv-house__cycling-button {
+    --button-width: 5rem;
+    --button-height: 5rem;
+    width: var(--button-width);
+    height: var(--button-height);
+    border-radius: 50%;
+    filter: drop-shadow(0 0 3px rgba(89, 79, 66, 0.04));
+    border: 0;
+    cursor: pointer;
+    background-image: url(../images/button-arrow-562bcacf6d4d6aa4145b..svg);
+    background-size: 6px;
+    background-position: center;
+    margin-right: 1.8rem;
+    background-repeat: no-repeat; /* 追加 */
+}
+
+.mv-house__cycling-button:last-child {
+    margin-right: 0;
+}
+
+.mv-house__cycling-button.light-blue-button { --color-bg: #70c4d9; background-color: var(--color-bg); }
+.mv-house__cycling-button.blue-button { --color-bg: #537cad; background-color: var(--color-bg); }
+.mv-house__cycling-button.green-button { --color-bg: #35a286; background-color: var(--color-bg); }
+.mv-house__cycling-button.yellow-button { --color-bg: #e3b969; background-color: var(--color-bg); }
+.mv-house__cycling-button.orange-button { --color-bg: #f09b00; background-color: var(--color-bg); }
+
+.mv-house__cycling-button.button-active {
+    --color: var(--color-bg);
+    --white-space-width: 3px;
+    --color-space-width: 4px;
+    box-shadow: 0 0 0 var(--white-space-width) #efefee, 0 0 0 var(--color-space-width) var(--color);
+}
+
+.top-page__mv .note {
+    position: absolute;
+    z-index: 1;
+    bottom: 1rem;
+    left: 10px;
+    font-size: 10px;
+    letter-spacing: 1px;
+    color: #646464;
+    font-weight: 500;
+}
+
+/* メインビジュアル レスポンシブ */
+@media screen and (max-width: 1280px) {
+    .mv-description .sub em { font-size: 2.6rem; }
+    .mv-description .description-ranking { --ranking-width: 132px; }
+    .mv-house__cycling-button { --button-width: 4rem; --button-height: 4rem; }
+}
+
+@media screen and (max-width: 1000px) {
+    .top-page__mv { padding: 0; }
+    .p-top-page__background-mv { display: none; }
+    .top-page__mv-content { flex-direction: column-reverse; align-items: unset; }
+    .mv-description { padding: 0 4rem; }
+    .mv-description .sub { justify-content: center; align-items: center; font-size: 2rem; }
+    .mv-description .sub .mv-description__icon { display: none; }
+    .mv-description .large-title { text-align: center; letter-spacing: 7px; line-height: 8rem; margin: 3rem 0; }
+    .mv-description .large-title .special-break-line { display: block; }
+    .mv-description .description-ranking { justify-content: unset; margin-bottom: 5rem; --display-line: none; }
+    .mv-description .description-ranking .description-ranking__content { line-height: normal; font-size: 2rem; letter-spacing: 2px; padding: 2rem 5px 0; flex: 1; border-right: 1px solid #e6e6e6; }
+    .mv-description .description-ranking .description-ranking__content:last-child { border-right: 0; }
+    .mv-house__color-preview { aspect-ratio: unset; --height: 30rem; background-position: top center; --bg-url: url(../images/house_light_blue_sp-068f80b3ce50c47e7566..png); display: flex; flex: unset; }
+    .mv-house__color-preview .mv-house__color-preview__content { align-items: unset; width: 60%; top: 15%; transform: translateX(60%); }
+    .mv-house__color-preview .mv-house__color-preview__content .mv-house__color-preview__button-list { order: 2; }
+    .mv-house__color-preview .mv-house__color-preview__content p { order: 1; font-size: 2.4rem; letter-spacing: 1px; line-height: 2rem; color: #fff; font-weight: 600; font-family: "Poppins"; }
+    .top-page__mv .note { position: unset; width: 100%; font-size: 1.4rem; text-align: center; padding: 0 10px 30px; }
+}
+
+@media screen and (max-width: 767px) {
+    .mv-description .description-ranking .description-ranking__content { font-size: 1.4rem; }
+    .mv-house__color-preview { --height: 23rem; }
+    .mv-house__color-preview .mv-house__color-preview__content p { font-size: 1.6rem; letter-spacing: 1px; }
+    .mv-house__cycling-button.button-active { --white-space-width: 2px; --color-space-width: 3px; }
+}
+
+@media screen and (max-width: 540px) {
+    .mv-description .large-title { letter-spacing: 0; line-height: 5rem; margin: 1rem 0 2.2rem; font-size: 4.5rem; }
+    .mv-description .sub { font-size: 1.2rem; }
+    .mv-description .sub em { font-size: 2rem; }
+    .mv-description .description-ranking .description-ranking__content { font-size: 1.2rem; padding-left: 2px; padding-right: 2px; }
+    .mv-description .description-ranking .description-ranking__content .ranking { --width-icon: 1.8rem; --height-icon: 3.5rem; }
+    .mv-house__color-preview { --height: 13.5rem; }
+    .mv-house__color-preview .mv-house__color-preview__content { top: 3.4%; }
+    .mv-house__cycling-button { --button-width: 3rem; --button-height: 3rem; background-size: 4px; margin-right: 1rem; }
+    .top-page__mv .note { font-size: .8rem; letter-spacing: 0px; }
+}
+
+@media screen and (max-width: 320px) {
+    .mv-description .large-title { font-size: 4rem; line-height: 6rem; }
+    .mv-description .sub { font-size: 1rem; }
+    .mv-description .sub .sub-left { padding-right: 1rem; margin-right: 1rem; }
+    .mv-house__color-preview { --height: 10rem; }
+    .mv-house__color-preview .mv-house__color-preview__content p { font-size: 1.4rem; margin-top: .5rem; margin-bottom: .5rem; }
+    .mv-house__cycling-button { --button-width: 2.4rem; --button-height: 2.4rem; }
+}
+
 /* 既存のcustom.cssの内容 */
 /* 全体のリセットとベーススタイル */
 * {
@@ -447,110 +720,6 @@ a {
   max-width: 1200px;
   margin: 0 auto;
   padding: 0 15px;
-}
-
-/* ヘッダースタイル (古いものは削除またはコメントアウト) */
-/* .header { ... } */
-/* .header-container { ... } */
-/* ... (他の古いヘッダースタイル) ... */
-
-/* メインビジュアル */
-.main-visual {
-  background-color: #f9f5e9;
-  padding: 50px 0;
-  position: relative;
-  overflow: hidden;
-}
-
-.mv-container {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 20px;
-}
-
-.mv-content {
-  flex: 1;
-  padding-right: 30px;
-}
-
-.mv-title {
-  font-size: 48px;
-  font-weight: bold;
-  line-height: 1.2;
-  margin-bottom: 30px;
-}
-
-.mv-badges {
-  display: flex;
-  margin-bottom: 30px;
-}
-
-.badge {
-  background-color: #fff;
-  padding: 15px;
-  margin-right: 15px;
-  border-radius: 5px;
-  text-align: center;
-  position: relative;
-}
-
-.badge p {
-  font-size: 14px;
-  line-height: 1.4;
-}
-
-.badge-icon {
-  background-color: #ffd700;
-  color: #fff;
-  font-weight: bold;
-  padding: 5px 10px;
-  border-radius: 20px;
-  position: absolute;
-  bottom: -10px;
-  left: 50%;
-  transform: translateX(-50%);
-}
-
-.mv-stats {
-  display: flex;
-  margin-bottom: 15px;
-}
-
-.mv-stats p {
-  margin-right: 20px;
-  font-size: 18px;
-}
-
-.highlight {
-  color: #ff6b00;
-  font-size: 24px;
-  font-weight: bold;
-}
-
-.mv-research {
-  font-size: 12px;
-  color: #666;
-}
-
-.mv-image {
-  flex: 1;
-  position: relative;
-}
-
-.house-image {
-  position: relative;
-  text-align: center;
-}
-
-.color-selector {
-  position: absolute;
-  bottom: 20px;
-  left: 50%;
-  transform: translateX(-50%);
-  text-align: center;
 }
 
 /* 相場診断フォーム */
@@ -1173,11 +1342,6 @@ a {
 .footer-logo img {
   height: 40px;
 }
-
-/* レスポンシブデザイン (古いものは削除またはコメントアウト) */
-/* @media (max-width: 1024px) { ... } */
-/* @media (max-width: 768px) { ... } */
-/* @media (max-width: 480px) { ... } */
 
 /* ユーティリティクラス */
 .pc-only {

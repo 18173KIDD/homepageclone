@@ -200,83 +200,102 @@
     </section>
 
     <!-- 相場診断フォーム部分 -->
-    <section class="price-check">
-        <div class="price-check-container">
-            <h2 class="section-title">相場を診断</h2>
-            <div class="price-check-content">
-                <div class="amazon-gift">
-                    <div class="gift-image">
-                        <img src="images/amazon.svg" alt="Amazon">
-                    </div>
-                    <div class="gift-text">
-                        <p>相場診断でAmazonギフト券</p>
-                        <p class="gift-amount">1000円分</p>
-                        <p>プレゼント中！</p>
+    <div class="top-page__diagnosis_container">
+        <section class="top-page__diagnosis" id="contact">
+            <div class="diagnosis-left-panel">
+                <img src="images/how-mach.svg" alt="how mach?" class="diagnosis-how-match">
+                <p class="rate-check">\ 簡単<span class="number">10</span>秒相場CHECK /</p>
+                <h2 class="large-title">
+                    <p>外壁塗装の</p>
+                    <p><em>相場を診断</em></p>
+                </h2>
+                <div class="amazon-description">
+                    <img src="images/amazon.svg" alt="amazon" class="icon-amazon">
+                    <div class="inline-box">
+                        <div class="inline-box-content">
+                            相場診断で<br>Amazonギフト券
+                            <p class="hightlight"><em>1000</em>円分</p>
+                            プレゼント中！
+                        </div>
                     </div>
                 </div>
-                <a href="#gift-details" class="gift-details-link">プレゼント適用の詳細はこちら</a>
+                <p class="noted">
+                    <a href="/gift">プレゼント適用の詳細はこちら</a>
+                </p>
             </div>
-            <form class="price-check-form">
-                <div class="form-row">
-                    <div class="form-group">
-                        <label for="prefecture">都道府県<span class="required">必須</span></label>
-                        <select id="prefecture" name="prefecture" required>
-                            <option value="">選択してください</option>
-                            <option value="hokkaido">北海道</option>
-                            <!-- 他の都道府県オプション -->
-                        </select>
-                    </div>
-                    <div class="form-group">
-                        <label for="area">延面積<span class="required">必須</span></label>
-                        <select id="area" name="area" required>
-                            <option value="">選択してください</option>
-                            <option value="unknown">わからない</option>
-                            <option value="50">～50 平米</option>
-                            <!-- 他の面積オプション -->
-                        </select>
-                    </div>
+            <div class="diagnosis-right-panel">
+                <div class="diagnosis__form-sp-color">
+                    <form class="diagnosis__form">
+                        <div class="diagnosis__form__field">
+                            <label class="diagnosis__form__field-label" for="prefecture">都道府県<span>必須</span></label>
+                            <div class="diagnosis__form__field-body">
+                                <label class="diagnosis__form-sp-label"><span>01</span>都道府県</label>
+                                <select id="prefecture" name="prefecture" required>
+                                    <option value="">選択してください</option>
+                                    <option value="hokkaido">北海道</option>
+                                    <!-- 他の都道府県オプション -->
+                                </select>
+                            </div>
+                        </div>
+                        <div class="diagnosis__form__field">
+                            <label class="diagnosis__form__field-label" for="area">延面積<span>必須</span></label>
+                            <div class="diagnosis__form__field-body">
+                                <label class="diagnosis__form-sp-label"><span>02</span>延面積</label>
+                                <select id="area" name="area" required>
+                                    <option value="">選択してください</option>
+                                    <option value="unknown">わからない</option>
+                                    <option value="50">～50 平米</option>
+                                    <!-- 他の面積オプション -->
+                                </select>
+                            </div>
+                        </div>
+                        <div class="diagnosis__form__field">
+                            <label class="diagnosis__form__field-label" for="situation">現在の状況<span>必須</span></label>
+                            <div class="diagnosis__form__field-body">
+                                <label class="diagnosis__form-sp-label"><span>03</span>現在の状況</label>
+                                <select id="situation" name="situation" required>
+                                    <option value="">選択してください</option>
+                                    <option value="price">価格の相場が気になっている</option>
+                                    <!-- 他の状況オプション -->
+                                </select>
+                            </div>
+                        </div>
+                        <div class="diagnosis__form__field">
+                            <label class="diagnosis__form__field-label" for="construction">工事箇所<span>必須</span></label>
+                            <div class="diagnosis__form__field-body">
+                                <label class="diagnosis__form-sp-label"><span>04</span>工事箇所</label>
+                                <select id="construction" name="construction" required>
+                                    <option value="">選択してください</option>
+                                    <option value="wall">外壁の塗装</option>
+                                    <option value="roof">屋根の塗装</option>
+                                    <!-- 他の工事箇所オプション -->
+                                </select>
+                            </div>
+                        </div>
+                        <div class="diagnosis__form__field">
+                            <label class="diagnosis__form__field-label" for="phone">携帯電話番号<span>必須</span></label>
+                            <div class="diagnosis__form__field-body">
+                                <label class="diagnosis__form-sp-label"><span>05</span>携帯電話番号</label>
+                                <input type="tel" id="phone" name="phone" placeholder="例: 08012345678" required>
+                                <p class="diagnosis-form__noted">※こちらの携帯電話番号にSMSメール概算相場価格と 小冊子のダウンロードリンクをお送りしますのでお間違えのないようにご入力ください。</p>
+                            </div>
+                        </div>
+                        <div class="diagnosis__form__field">
+                            <label class="diagnosis__form__field-label" for="email">メールアドレス<span class="disabled">任意</span></label>
+                            <div class="diagnosis__form__field-body">
+                                <label class="diagnosis__form-sp-label"><span>06</span>メールアドレス</label>
+                                <input type="email" id="email" name="email" placeholder="例: example@example.com">
+                            </div>
+                        </div>
+                        <div class="text-center">
+                            <p><a href="/rule" target="_blank">利用規約</a>と<a href="/privacy" target="_blank">プライバシーポリシー</a>に同意して、</p>
+                            <button type="submit" class="diagnosis__form__submit"><span>無料</span>今すぐ相場を診断する</button>
+                        </div>
+                    </form>
                 </div>
-                <div class="form-row">
-                    <div class="form-group">
-                        <label for="situation">現在の状況<span class="required">必須</span></label>
-                        <select id="situation" name="situation" required>
-                            <option value="">選択してください</option>
-                            <option value="price">価格の相場が気になる</option>
-                            <!-- 他の状況オプション -->
-                        </select>
-                    </div>
-                    <div class="form-group">
-                        <label for="construction">工事箇所<span class="required">必須</span></label>
-                        <select id="construction" name="construction" required>
-                            <option value="">選択してください</option>
-                            <option value="wall">外壁の塗装</option>
-                            <option value="roof">屋根の塗装</option>
-                            <!-- 他の工事箇所オプション -->
-                        </select>
-                    </div>
-                </div>
-                <div class="form-row">
-                    <div class="form-group">
-                        <label for="phone">携帯電話番号<span class="required">必須</span></label>
-                        <input type="tel" id="phone" name="phone" placeholder="例: 08012345678" required>
-                        <p class="form-note">※こちらの携帯電話番号宛にSMSメール経由相場診断結果と小冊子のダウンロードリンクをお送りしますのでお間違えのないようにご入力ください。</p>
-                    </div>
-                </div>
-                <div class="form-row">
-                    <div class="form-group">
-                        <label for="email">メールアドレス<span class="optional">任意</span></label>
-                        <input type="email" id="email" name="email" placeholder="例: example@example.com">
-                    </div>
-                </div>
-                <div class="form-agreement">
-                    <p><a href="/terms" target="_blank">利用規約</a>と<a href="/privacy" target="_blank">プライバシーポリシー</a>に同意して、</p>
-                </div>
-                <div class="form-submit">
-                    <button type="submit" class="submit-button">無料今すぐ相場を診断する</button>
-                </div>
-            </form>
-        </div>
-    </section>
+            </div>
+        </section>
+    </div>
 
     <!-- サービス紹介部分 -->
     <section class="about-service">
